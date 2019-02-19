@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
+
 <body>
-
-{{range .}}
-
-<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
-
-{{end}}
+  <h1>Go Class Schedule</h1>
+  {{range .}}
+    <h2>School Year {{.AcaYear}}</h2>
+    <ul>
+      <li><h3>{{.Fall.Term}} Term</h3></li>
+      <ol>
+        {{range .Fall.Courses}}
+          <li>{{.}}</li>
+        {{end}}
+      </ol>
+      <li><h3>{{.Spring.Term}} Term</h3></li>
+      <ol>
+        {{range .Spring.Courses}}
+          <li>{{.}}</li>
+        {{end}}
+      </ol>
+    </ul>
+  {{end}}
 
 </body>
+
 </html>
