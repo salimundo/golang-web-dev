@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sam's Place Restaurant</title>
+</head>
+<body>
+  <h1>{{.Name}}</h1>
+  <h2>Menu</h2>
+  <ul>
+    <li><h3>Breakfast</h3></li>
+    <ol>
+      {{range .Courses.Breakfast}}
+      <li><strong>{{.Name}}</strong></li>
+      {{.Description}} - ${{printf "%.2f" .Price}}
+      <br><br>
+      {{end}}
+    </ol>
+    <li><h3>Lunch</h3></li>
+    <ol>
+      {{range .Courses.Lunch}}
+      <li><strong>{{.Name}}</strong></li>
+      {{.Description}} - ${{printf "%.2f" .Price}}
+      <br><br>
+      {{end}}
+    </ol>
+    <li><h3>Dinner</h3></li>
+    <ol>
+      {{range .Courses.Dinner}}
+      <li><strong>{{.Name}}</strong></li>
+      {{.Description}} - ${{printf "%.2f" .Price}}
+      <br><br>
+      {{end}}
+    </ol>
+  </ul>
+</body>
+</html>

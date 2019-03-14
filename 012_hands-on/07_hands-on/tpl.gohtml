@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nearby Restaurants</title>
+</head>
+<body>
+  <h1>Nearby Restaurants and their menu.</h1>
+  {{range .}}
+  <ul>
+    <li><h2>{{.Name}}</h2></li>
+    <h3>Breakfast</h3>
+    {{range .Courses.Breakfast}}
+      <ol>
+        <li><strong>{{.Name}}</strong></li>
+        {{.Description}} - {{.Price}}
+        <br><br>
+      </ol>
+    {{end}}
+    <h3>Lunch</h3>
+    {{range .Courses.Lunch}}
+      <ol>
+        <li><strong>{{.Name}}</strong></li>
+        {{.Description}} - {{.Price}}
+        <br><br>
+      </ol>
+    {{end}}
+    <h3>Dinner</h3>
+    {{range .Courses.Dinner}}
+      <ol>
+        <li><strong>{{.Name}}</strong></li>
+        {{.Description}} - {{.Price}}
+        <br><br>
+      </ol>
+    {{end}}
+  </ul>
+  {{end}}
+</body>
+</html>
